@@ -184,6 +184,56 @@
             transform: translateY(-3px);
         }
 
+        .store-image-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0;
+            background: rgba(30, 30, 30, 0.85);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .store-image-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .store-image-section .image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-image: url('...images/smokeshop.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .store-image-section .image-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e0dcbf;
+        }
+
+        .store-image-section h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #37d459;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            text-align: center;
+            padding: 20px;
+        }
+
         footer {
             background: rgba(30, 30, 30, 0.95);
             padding: 20px;
@@ -202,13 +252,21 @@
                 font-size: 3em;
             }
 
-            .products, .contact, .store-info {
+            .products, .contact, .store-info, .store-image-section {
                 margin: 20px;
             }
 
             nav {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            .store-image-section .image-container {
+                height: 250px;
+            }
+
+            .store-image-section h2 {
+                font-size: 2em;
             }
         }
     </style>
@@ -261,9 +319,18 @@
         <h2>Contact Us</h2>
         <ul>
             <li><a href="tel:5615460544">Phone: (561) 546-0544</a></li>
-            <li><a href="mailto:besanpalm@gmail.com">Email: besanpalm@gmail.com</a></li>
+            <li><a href="mailto:info@besanpalm.com">Email: info@besanpalm.com</a></li>
             <li><a href="https://www.instagram.com/besanpalm">Instagram: @besanpalm</a></li>
         </ul>
+    </section>
+
+    <section class="store-image-section" id="store-image">
+        <h2>Welcome to Our Smoke Shop</h2>
+        <div class="image-container">
+            <div class="image-overlay">
+                <p>Experience the ambiance of Besan Palm firsthand!</p>
+            </div>
+        </div>
     </section>
 
     <section class="store-info" id="store">
@@ -276,7 +343,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Besan Palm Smoke Shop. All Rights Reserved.</p>
+        <p>&copy; 2025 Besan Palm Smoke Lounge. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
