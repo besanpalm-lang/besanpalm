@@ -2,52 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Besan Palm Smoke Lounge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(to bottom, #1c1c1c, #2f2f2f);
             color: #e0dcbf;
-            font-family: 'Georgia', serif;
-            text-align: center;
-            padding: 80px 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
             background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
             background-repeat: repeat;
-        }
-
-        h1 {
-            font-size: 4.5em;
-            margin-bottom: 0.2em;
-            color: #37d459; /* Smoky gold */
-            text-shadow: 2px 2px 10px rgba(212, 175, 55, 0.5);
-            font-family: 'Cinzel Decorative', cursive;
-        }
-
-        p {
-            font-size: 1.4em;
-            margin: 0.5em 0;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background-color: #3e3e3e;
-            color: #d4af37;
-            border: 2px solid #d4af37;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            background-color: #d4af37;
-            color: #1c1c1c;
-            box-shadow: 0 0 10px #d4af37;
         }
 
         .smoke {
@@ -58,15 +30,253 @@
             height: 100%;
             pointer-events: none;
             background: url('https://www.transparenttextures.com/patterns/smoke.png') repeat;
-            opacity: 0.05;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        header {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #37d459;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 5em;
+            color: #37d459;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 40px rgba(55, 212, 89, 0.5);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(55, 212, 89, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 40px rgba(55, 212, 89, 0.5);
+            }
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            font-style: italic;
+            margin: 10px 0;
+            color: #a8a8a8; /* Darker color for hero text */
+        }
+
+        .products, .contact, .store-info {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.85);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .products:hover, .contact:hover, .store-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .products h2, .contact h2, .store-info h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #37d459;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            background: rgba(62, 62, 62, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+        }
+
+        .product-item h3 {
+            color: #d4af37;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .product-item p {
+            font-size: 1.1em;
+            color: #e0dcbf;
+        }
+
+        .contact ul, .store-info ul {
+            list-style: none;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .contact a, .store-info a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover, .store-info a:hover {
+            color: #37d459;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #d4af37, #37d459);
+            color: #1c1c1c;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(45deg, #37d459, #d4af37);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #d4af37;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+            color: #e0dcbf;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .products, .contact, .store-info {
+                margin: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="smoke"></div>
-    <h1>BESAN PALM</h1>
-    <p>Margate's Finest Smoke Shop</p>
-    <p>Pipes • Papers • Cigars • Hookah</p>
-    <a href="tel:5615460544">Call Now: (561) 546-0544</a>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+            <a href="#store">Store Info</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>BESAN PALM</h1>
+        <p>Margate's Finest Smoke Shop</p>
+        <p>Premium Pipes, Papers, Cigars, Hookahs, and Vapes</p>
+        <a href="tel:5615460544" class="cta-button">Call Now: (561) 546-0544</a>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <h3>Pipes</h3>
+                <p>Handcrafted glass and metal pipes for a premium smoking experience.</p>
+            </div>
+            <div class="product-item">
+                <h3>Rolling Papers</h3>
+                <p>Organic and flavored papers for smooth, clean rolls.</p>
+            </div>
+            <div class="product-item">
+                <h3>Cigars</h3>
+                <p>Premium hand-rolled cigars from top brands.</p>
+            </div>
+            <div class="product-item">
+                <h3>Hookahs</h3>
+                <p>High-quality hookahs and shisha flavors for group sessions.</p>
+            </div>
+            <div class="product-item">
+                <h3>Vapes</h3>
+                <p>Top-tier vape devices and e-liquids for a modern smoking experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <ul>
+            <li><a href="tel:5615460544">Phone: (561) 546-0544</a></li>
+            <li><a href="mailto:info@besanpalm.com">Email: info@besanpalm.com</a></li>
+            <li><a href="https://www.instagram.com/besanpalm">Instagram: @besanpalm</a></li>
+        </ul>
+    </section>
+
+    <section class="store-info" id="store">
+        <h2>Store Information</h2>
+        <ul>
+            <li>Address: 1234 Smoky Lane, Margate, FL 33063</li>
+            <li>Hours: Mon-Sat: 10 AM - 10 PM, Sun: 12 PM - 8 PM</li>
+            <li><a href="#products">Browse Our Products</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Besan Palm Smoke Lounge. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
