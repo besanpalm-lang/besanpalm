@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipes - Besan Palm Smoke Lounge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #1c1c1c, #2f2f2f);
+            color: #e0dcbf;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            background-repeat: repeat;
+        }
+
+        .smoke {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('https://www.transparenttextures.com/patterns/smoke.png') repeat;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        header {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #37d459;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            border: 2px solid transparent;
+            animation: glowBorder 3s ease-in-out infinite;
+        }
+
+        @keyframes glowBorder {
+            0% {
+                border-color: #37d459;
+                box-shadow: 0 0 10px #37d459;
+            }
+            50% {
+                border-color: #a100a1;
+                box-shadow: 0 0 10px #a100a1;
+            }
+            100% {
+                border-color: #37d459;
+                box-shadow: 0 0 10px #37d459;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 5em;
+            color: #37d459;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 40px rgba(55, 212, 89, 0.5);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(55, 212, 89, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 40px rgba(55, 212, 89, 0.5);
+            }
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            font-style: italic;
+            margin: 10px 0;
+            color: #a8a8a8;
+        }
+
+        .products {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.85);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: glowBorder 3s ease-in-out infinite;
+        }
+
+        .products:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .products h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #37d459;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            background: rgba(62, 62, 62, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+        }
+
+        .product-item h3 {
+            color: #d4af37;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .product-item p {
+            font-size: 1.1em;
+            color: #e0dcbf;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #d4af37, #37d459);
+            color: #1c1c1c;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(45deg, #37d459, #d4af37);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #d4af37;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+            color: #e0dcbf;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .products {
+                margin: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="smoke"></div>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cigars.html">Cigars</a>
+            <a href="pipes.html">Pipes</a>
+            <a href="hookahs.html">Hookahs</a>
+            <a href="papers.html">Papers</a>
+            <a href="contact.html">Contact</a>
+            <a href="store.html">Store Info</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="pipes-hero">
+        <h1>Our Pipes</h1>
+        <p>Handcrafted Smoking Pipes</p>
+        <p>Experience Artistry at Besan Palm Smoke Lounge</p>
+        <a href="tel:5615460544" class="cta-button">Call Now: (561) 546-0544</a>
+    </section>
+
+    <section class="products" id="pipes">
+        <h2>Explore Our Pipes</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <h3>Chameleon Glass</h3>
+                <p>Vibrant, hand-blown glass pipes with unique color-changing properties.</p>
+            </div>
+            <div class="product-item">
+                <h3>Grav Labs</h3>
+                <p>Sleek, durable glass pipes designed for smooth hits and easy cleaning.</p>
+            </div>
+            <div class="product-item">
+                <h3>Savinelli</h3>
+                <p>Classic briar wood pipes with elegant craftsmanship for a timeless smoke.</p>
+            </div>
+            <div class="product-item">
+                <h3>Metal Stealth Pipes</h3>
+                <p>Discreet, compact metal pipes built for durability and portability.</p>
+            </div>
+            <div class="product-item">
+                <h3>Empire Glassworks</h3>
+                <p>Artistic glass pipes with intricate, themed designs for collectors.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Besan Palm Smoke shop. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
